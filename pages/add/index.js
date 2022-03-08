@@ -19,13 +19,13 @@ async function insertData(input) {
 }
 
 export default function add() {
-    
+    const router = useRouter()
 
     const dataHandler = (event) => {
         
         insertData(event).then(e => {
             console.log('pages', e)
-            
+            router.push('/')
             toast.success('imported')
         })
 
