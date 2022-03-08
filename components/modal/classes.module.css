@@ -1,0 +1,28 @@
+@keyframes blurMedia {
+  from {
+    backdrop-filter: blur(0px);
+  }
+  to {
+    backdrop-filter: blur(4px);
+  }
+}
+@keyframes blurMediaOut {
+    from {
+      backdrop-filter: blur(4px);
+    }
+    to {
+      backdrop-filter: blur(0);
+    }
+  }
+
+.modalContainer {
+  backdrop-filter: blur(4px);
+  animation-name: blurMedia;
+  animation-duration: 3s;
+}
+
+.modalContainerOut{
+    backdrop-filter: blur(0);
+  animation-name: blurMediaOut;
+  animation-duration: 3s;
+}
