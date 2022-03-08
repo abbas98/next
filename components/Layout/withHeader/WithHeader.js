@@ -8,7 +8,7 @@ export default function Withheader({ children }) {
         <div id='portal' className="w-full"/>
         <div>
         <HeaderComp />
-            <div className="grow flex flex-col justify-center items-center w-full grow md:h-screen">
+            <div className="grow flex flex-col justify-center items-center w-full grow">
             {children}
             </div>
         </div>
