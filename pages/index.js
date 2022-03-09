@@ -43,7 +43,7 @@ export default function Home({items}) {
 }
 
 
-  export async function getSt() {
+  export async function getStaticProps() {
 
     const client = await MongoClient.connect('mongodb+srv://amirabbas:gEliUZvlfxDQSJn0@cluster0.h1rgy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
     const db = client.db()
@@ -54,13 +54,15 @@ export default function Home({items}) {
     client.close()
 
     return {
-      
+      props:{
         items:result.map(item => ({
           name:item.name,
           imagePath: item.imagePath,
           desc: item.desc,
           id: item._id.toString()
         }))
+      }
+        
       
         
       }
