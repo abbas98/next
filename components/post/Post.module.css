@@ -1,0 +1,16 @@
+@keyframes makeBig {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+       
+    }
+  }
+
+  .contextContainer {
+
+    animation-name: makeBig ;
+    animation-duration: 0.5s;
+    
+  }

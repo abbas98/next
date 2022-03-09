@@ -17,8 +17,8 @@
 
 .modalContainer {
   backdrop-filter: blur(4px);
-  animation-name: blurMedia;
-  animation-duration: 3s;
+  /* animation-name: blurMedia; */
+  /* animation-duration: 0.5s; */
 }
 
 .modalContainerOut{

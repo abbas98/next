@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react'
 
 
 export default function Home({items}) {
-
+  
   const WithLoadingComponent = WithLoading(Items)
 
   const [isLoading, setIsLoading] = useState(false)
@@ -43,7 +43,7 @@ export default function Home({items}) {
 }
 
 
-  export async function getStaticProps() {
+  export async function getServerSideProps() {
 
     const client = await MongoClient.connect('mongodb+srv://amirabbas:gEliUZvlfxDQSJn0@cluster0.h1rgy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
     const db = client.db()
@@ -61,9 +61,7 @@ export default function Home({items}) {
           desc: item.desc,
           id: item._id.toString()
         }))
-      },
-        
-      
+      }
         
       }
     

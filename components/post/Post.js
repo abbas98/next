@@ -1,5 +1,5 @@
 import Modal from '../modal/Modal'
-
+import styles from './Post.module.css'
 export default function Post({ item, showHandler, show }) {
 
 
@@ -7,7 +7,7 @@ export default function Post({ item, showHandler, show }) {
         <>
             {
                 <Modal showHandler={showHandler} show={show}>
-                    <div className="bg-white w-2/3 rounded-2xl flex flex-row" onClick={e => e.stopPropagation()}>
+                    <div className={"bg-white w-2/3 rounded-2xl flex flex-row " + styles.contextContainer}  onClick={e => e.stopPropagation()}>
                     <img className="rounded-l-2xl w-1/2 " src={item.imagePath} alt={item.name} />
                         <div className="p-4 flex flex-col gap-2">
                             <h1 className="text-2xl text-gray-600 font-[700]">{item.name}</h1>
