@@ -8,7 +8,7 @@ export default function Item({ item }) {
         setShow(!show)
     }
     return (
-        <div className="bg-white rounded-2xl " onClick={() => showHandler()} >
+        <div style={{boxShadow: "4px 6px 8px #c4c4c4"}} className="bg-white rounded-2xl " onClick={() => showHandler()} >
             <img className="rounded-t-2xl" src={item.imagePath} alt={item.name} />
             <div className="p-4">
                 <span className="bg-gray-100 p-1 px-2 rounded-xl">{item.name}</span>

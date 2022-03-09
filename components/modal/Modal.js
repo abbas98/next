@@ -6,7 +6,7 @@ export default function Modal({ children, showHandler }) {
     return (
         <>
             {createPortal(
-                <div className={"h-full w-full absolute " + styles.modalContainer} onClick={() => showHandler(false)} >
+                <div className={"h-full w-full fixed " + styles.modalContainer} onClick={() => showHandler(false)} >
                     <div className={"flex justify-center items-center h-screen " + styles.contextContainer} >
                         {children}
                     </div>
