@@ -5,7 +5,7 @@ import Withheader from '../components/Layout/withHeader/WithHeader'
 import styles from '../styles/Home.module.css'
 import { MongoClient } from "mongodb"
 import WithLoading from '../components/withLoading/WithLoading'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 
@@ -15,14 +15,14 @@ export default function Home({items}) {
 
   const [isLoading, setIsLoading] = useState(false)
   const [repos, setrepos] = useState(null)
-  useEffect(() => {
-    setIsLoading(true)
-    getData().then(res => {
-      setIsLoading(false)
-      setrepos(res)
-    })
+  // useEffect(() => {
+  //   setIsLoading(true)
+  //   getData().then(res => {
+  //     setIsLoading(false)
+  //     setrepos(res)
+  //   })
   
-  }, [isLoading])
+  // }, [isLoading])
 
   return (
     <div className="flex bg-gray-200">
