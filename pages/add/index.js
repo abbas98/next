@@ -18,7 +18,7 @@ async function insertData(input) {
     return response
 }
 
-export default function add() {
+export default function AddPage() {
     const router = useRouter()
 
     const dataHandler = (event) => {
@@ -44,10 +44,10 @@ export default function add() {
 }
 
 
-add.getLayout = function getLayout(add) {
+AddPage.getLayout = function getLayout(AddPage) {
     return (
         <AddLayout>
-            {add}
+            {AddPage}
         </AddLayout>
     )
 }
