@@ -61,9 +61,9 @@ export default function Home({items}) {
           desc: item.desc,
           id: item._id.toString()
         }))
-      }
+      },
         
-      
+      revalidate:10
         
       }
     
