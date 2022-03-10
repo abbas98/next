@@ -8,7 +8,7 @@ import Register, { redirectUser } from '../components/register/Register';
 
 import Redirect from '../components/redirect/Redirect';
 
-export default function MyApp({ Component, pageProps, Redirect }) {
+export default function MyApp({ Component, pageProps }) {
   const [user, setUser] = useState(null);
 
   // Use the layout defined at the page level, if available
@@ -19,6 +19,7 @@ export default function MyApp({ Component, pageProps, Redirect }) {
     //   destination: '/register',
     //   permanent: false,
     // }
+    
     return getLayout(
       <>
         <Toaster

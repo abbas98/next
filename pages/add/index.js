@@ -52,15 +52,16 @@ AddPage.getLayout = function getLayout(AddPage) {
     )
 }
 
-export async function getStaticProps(context){
-    console.log(context);
-
+export async function getServerSideProps({ res, params }){
+        // res.setHeader("location", "/register");
+        // res.statusCode = 302;
+        // res.end();
 
         return{
-            props:{
-                protected: true
-            }
-            
+            redirect: {
+                permanent: false,
+                destination: '/somewhere-else'
+              }
         }
     } 
 
