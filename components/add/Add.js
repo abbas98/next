@@ -11,7 +11,7 @@ export default function Add({dataHandler}) {
     }
 
     return (
-        <div className="bg-white w-full h-full sm:w-1/3 sm:h-3/4 flex flex-col items-center justify-center gap-14 p-8 sm:rounded-2xl">
+        <div style={{boxShadow: "0 0 10px #c4c4c4"}} className="bg-white w-full h-full sm:w-1/3 sm:h-3/4 flex flex-col items-center justify-center gap-10 p-8 sm:rounded-2xl">
             <h2 className="text-2xl font-[700] text-gray-600">
                 New City
             </h2>
@@ -33,7 +33,7 @@ export default function Add({dataHandler}) {
         
             </div>
             <div className="flex w-full justify-center items-centers">
-                <button onClick={() => buttonHandler()} className="font-[600] rounded-2xl bg-cyan-800 text-white h-[50px] w-[180px] hover:bg-cyan-700 w-[300px]">Submit</button>
+                <button onClick={() => buttonHandler()} className="font-[600] rounded-2xl bg-cyan-800 text-white h-[50px] w-[300px] hover:bg-cyan-700 w-[300px]">Submit</button>
 
                 </div>
         </div>

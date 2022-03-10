@@ -2,7 +2,7 @@ import Add from "../../components/add/Add"
 import  AddLayout  from "../../components/Layout/AddLayout/AddLayout";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
-
+import { useUser } from '../../components/context/Context'
 
 
 async function insertData(input) {
@@ -51,4 +51,18 @@ AddPage.getLayout = function getLayout(AddPage) {
         </AddLayout>
     )
 }
+
+export async function getStaticProps(context){
+    console.log(context);
+
+
+        return{
+            props:{
+                protected: true
+            }
+            
+        }
+    } 
+
+
 
