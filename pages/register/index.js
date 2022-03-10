@@ -10,13 +10,15 @@ async function getData(input) {
         body: JSON.stringify(input),
         headers: {
             'Content-Type': 'application/json'
-        }})
+        }
+    })
     const response = await data.json()
     return response
 }
 export default function RegisterPage() {
 
     const router = useRouter()
+
     const registerHandler = (e) => {
         getData(e).then(e => {
             router.push('/')

@@ -14,8 +14,5 @@ export default async function handler(req, res) {
     res.status(201).json({ message: 'user registered :)' });
 
   }
-  if (req.method === 'GET'){
-
-  }
 
 }
