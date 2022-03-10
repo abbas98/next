@@ -8,18 +8,28 @@ import Register, { redirectUser } from '../components/register/Register';
 
 import Redirect from '../components/redirect/Redirect';
 
-export default function MyApp({ Component, pageProps, pageRedirect }) {
+export default function MyApp({ Component, pageProps, Redirect }) {
   const [user, setUser] = useState(null);
 
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || ((page) => page)
 
   if (pageProps.protected) {
-    pageRedirect = {
-      destination: '/register',
-      permanent: false,
-    }
+    // Redirect = {
+    //   destination: '/register',
+    //   permanent: false,
+    // }
+    return getLayout(
+      <>
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+        />
+        <NextNProgress height={2} color="#fff" options={{ showSpinner: false, easing: 'ease', speed: 500 }} />
 
+        <Component {...pageProps} />
+      </>
+    )
 
     // return getLayout(
     //   <Register />
@@ -32,7 +42,7 @@ export default function MyApp({ Component, pageProps, pageRedirect }) {
           position="top-right"
           reverseOrder={false}
         />
-        <NextNProgress height={1} color="#fff" options={{ showSpinner: false, easing: 'ease', speed: 500 }} />
+        <NextNProgress height={2} color="#fff" options={{ showSpinner: false, easing: 'ease', speed: 500 }} />
 
         <Component {...pageProps} />
       </>
