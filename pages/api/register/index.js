@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         //// find by email
         const checkEmailExisting = await db
             .collection('Users')
-            .findOne({ email: email });
+            .findOne({ email: email.toLowerCase() });
 
         //// find by phone number
         const checkPhoneNumberExisting = await db
@@ -46,9 +46,9 @@ export default async function handler(req, res) {
 
         const status = await db.collection('Users').insertOne(
             {
-                email: email ? email : 'empty',
+                email: email ? email.toLowerCase() : 'empty',
                 phone_number: phone_number ? phone_number : 'empty',
-                password: await hash(password.toLowerCase(), 12)
+                password: await hash(password, 12)
             })
 
             res.status(201).json({message: 'user created' , ...status})
