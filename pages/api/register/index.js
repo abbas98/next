@@ -48,7 +48,7 @@ export default async function handler(req, res) {
             {
                 email: email ? email : 'empty',
                 phone_number: phone_number ? phone_number : 'empty',
-                password: await hash(password, 12)
+                password: await hash(password.toLowerCase(), 12)
             })
 
             res.status(201).json({message: 'user created' , ...status})
