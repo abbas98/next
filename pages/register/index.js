@@ -12,17 +12,23 @@ async function getData(input) {
             'Content-Type': 'application/json'
         }
     })
-    const response = await data.json()
-    return response
+
+    return data
 }
 export default function RegisterPage() {
 
     const router = useRouter()
 
-    const registerHandler = (e) => {
-        getData(e).then(e => {
-            router.push('/')
-            toast.success('You signed up !')
+    function registerHandler(e) {
+        getData(e).then(async res => {
+            const data = await res.json()
+            if (res.status === 201) {
+                toast.success(data.message)
+                router.push('/')
+                return
+            }
+            toast.error(data.message)
+
         })
     }
     return (

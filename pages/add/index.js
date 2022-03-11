@@ -60,7 +60,7 @@ export async function getServerSideProps({ res, params }){
         return{
             redirect: {
                 permanent: false,
-                destination: '/somewhere-else'
+                destination: '/login'
               }
         }
     } 

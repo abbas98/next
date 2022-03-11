@@ -1,5 +1,6 @@
 import { MongoClient } from "mongodb"
-import { empty } from "prelude-ls";
+import { hash } from "bcryptjs";
+
 
 export default async function handler(req, res) {
 
@@ -47,7 +48,7 @@ export default async function handler(req, res) {
             {
                 email: email ? email : 'empty',
                 phone_number: phone_number ? phone_number : 'empty',
-                password: password
+                password: await hash(password, 12)
             })
 
             res.status(201).json({message: 'user created' , ...status})
